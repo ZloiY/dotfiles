@@ -193,11 +193,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('i', '<C-h>', '<left>', { desc = 'Move cursor to the left' })
-vim.keymap.set('i', '<C-l>', '<right>', { desc = 'Move cursor to the right' })
-vim.keymap.set('i', '<C-j>', '<down>', { desc = 'Move cursor to the lower' })
-vim.keymap.set('i', '<C-k>', '<up>', { desc = 'Move up to the upper' })
-
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Directory view' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Remove new line' })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Page-down and middle of the buffer' })
@@ -590,6 +585,7 @@ require('lazy').setup({
         },
 
         tsserver = {},
+        ts_ls = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -892,10 +888,10 @@ require('lazy').setup({
     'tpope/vim-fugitive',
     config = function()
       vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Show Git' })
-      vim.keymap.set('n', '<leader>gk', "<cmd>diffget //3<CR>", { desc = 'Accept right change' })
-      vim.keymap.set('n', '<leader>gh', "<cmd>diffget //2<CR>", { desc = 'Accept left change' })
-      vim.keymap.set('n', '<leader>gK', "<cmd>1,$+1diffget //3<CR>", { desc = 'Accept all right changes' })
-      vim.keymap.set('n', '<leader>gH', "<cmd>1,$+1diffget //2<CR>", { desc = 'Accept all left changes' })
+      vim.keymap.set('n', '<leader>gk', '<cmd>diffget //3<CR>', { desc = 'Accept right change' })
+      vim.keymap.set('n', '<leader>gh', '<cmd>diffget //2<CR>', { desc = 'Accept left change' })
+      vim.keymap.set('n', '<leader>gK', '<cmd>1,$+1diffget //3<CR>', { desc = 'Accept all right changes' })
+      vim.keymap.set('n', '<leader>gH', '<cmd>1,$+1diffget //2<CR>', { desc = 'Accept all left changes' })
     end,
   },
 
